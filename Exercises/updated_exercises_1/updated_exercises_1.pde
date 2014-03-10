@@ -45,14 +45,14 @@ background (110, 50, 50);
 //}
 
 //EXERCISE 5.2
-//for (int n = 10; n < height; n += 10) 
-//{
-//  strokeWeight (3);
-//  if (n < 50);
-//{
-//line (n, 300, n, 200);
-//}
-//}
+for (int n = 10; n < height; n += 10) 
+{
+  strokeWeight (3);
+  if (n < 50);
+{
+line (n, 300, n, 200);
+}
+}
 
 //EXERCISE 6.1, 6.2
 //line (50, 50, 80, 30);
