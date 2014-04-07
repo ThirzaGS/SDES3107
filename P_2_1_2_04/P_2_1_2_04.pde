@@ -37,7 +37,7 @@ boolean savePDF = false;
 
  
 int tileCount = 20;
-int rectSize = 30;
+int rectSize = 10;
 
 int actRandomSeed = 0;
 
@@ -52,9 +52,9 @@ void draw() {
   if (savePDF) beginRecord(PDF, timestamp()+".pdf");
 
   colorMode(HSB, 360, 100, 100, 100);
-  background(360);
+  background(600);
   smooth();
-  noStroke();
+  stroke (255);
 
   fill(192,100,64,60);
 
