@@ -66,14 +66,14 @@ void draw() {
       int posX = width/tileCount * gridX;
       int posY = height/tileCount * gridY;
 
-      float shiftX1 = mouseX/20 * random(-1, 1);
-      float shiftY1 = mouseY/20 * random(-1, 1);
-      float shiftX2 = mouseX/20 * random(-1, 1);
-      float shiftY2 = mouseY/20 * random(-1, 1);
-      float shiftX3 = mouseX/20 * random(-1, 1);
-      float shiftY3 = mouseY/20 * random(-1, 1);
-      float shiftX4 = mouseX/20 * random(-1, 1);
-      float shiftY4 = mouseY/20 * random(-1, 1);
+      float shiftX1 = mouseX/20 * random(-1, 10);
+      float shiftY1 = mouseY/20 * random(-1, 10);
+      float shiftX2 = mouseX/20 * random(-1, 10);
+      float shiftY2 = mouseY/20 * random(-1, 10);
+      float shiftX3 = mouseX/20 * random(-1, 10);
+      float shiftY3 = mouseY/20 * random(-1, 10);
+      float shiftX4 = mouseX/20 * random(-1, 10);
+      float shiftY4 = mouseY/20 * random(-1, 10);
      
       beginShape();
       vertex(posX+shiftX1, posY+shiftY1);
