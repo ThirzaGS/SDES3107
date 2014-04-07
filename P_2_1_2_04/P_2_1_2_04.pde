@@ -51,10 +51,10 @@ void setup(){
 void draw() {
   if (savePDF) beginRecord(PDF, timestamp()+".pdf");
 
-  colorMode(HSB, 470, 200, 828, 10);
+  colorMode(HSB, 300, 300, 500, 10);
   background(60);
   smooth();
-  stroke (255);
+  stroke (144);
 
   fill(192,100,64,60);
 
