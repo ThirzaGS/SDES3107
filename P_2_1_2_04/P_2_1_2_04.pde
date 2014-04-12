@@ -64,7 +64,7 @@ void draw() {
       for (int gridX=0; gridX<tileCount; gridX++) {
 
         int posX = width/tileCount * gridX;
-        int posY = height/tileCount * gridY;
+        int posY = height/tileCount * 10;
 
         float shiftX1 = mouseX/20 * random(-1, 10);
         float shiftY1 = mouseY/20 * random(-1, 10);
