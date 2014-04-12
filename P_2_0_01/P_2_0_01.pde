@@ -48,7 +48,7 @@ void draw(){
 
   int circleResolution = (int) map(mouseY, 0,height, 2,80);
   float radius = mouseX-width/2 + 0.5;
-  float angle = TWO_PI/circleResolution;
+  float angle = PI/circleResolution;
 
   strokeWeight(mouseY/20);
 
