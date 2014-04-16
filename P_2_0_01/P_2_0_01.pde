@@ -39,13 +39,13 @@ void setup(){
 
 void draw(){
   if (savePDF) beginRecord(PDF, timestamp()+".pdf");
-
-  strokeCap(SQUARE);
+    strokeCap(SQUARE);
   smooth();
-  noFill();
-  background(255);
+  stroke (204, 150, 245);
+  background(240);
   translate(width/2,height/2);
-
+ 
+  
   int circleResolution = (int) map(mouseY, 0,height, 2,80);
   float radius = mouseX-width/2 + 0.5;
   float angle = PI/circleResolution;
@@ -54,13 +54,19 @@ void draw(){
 
   beginShape();
   for (int i=0; i<=circleResolution; i++){
+    if ((i > 0) && (i < mouseX)) {
+      stroke (255);
+    } else {
+      stroke (204, 150, 245);
+    }
     float x = cos(angle*i) * radius*2;
-    float y = tan(angle*i) * radius-2;
+    float y = sin(angle*i) * radius-2;
     line(0, 0, x, y);
     // vertex(x, y);
   }
   endShape();
-
+  
+ 
   if (savePDF) {
     savePDF = false;
     endRecord();
