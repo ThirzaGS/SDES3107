@@ -54,7 +54,7 @@ void draw(){
 
   beginShape();
   for (int i=0; i<=circleResolution; i++){
-    if ((i > 0) && (i < mouseX)) {
+    if (mouseX > width/2) {
       stroke (255);
     } else {
       stroke (204, 150, 245);
