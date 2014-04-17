@@ -33,56 +33,53 @@ import java.util.Calendar;
 
 boolean savePDF = false;
 
-void setup(){
+void setup() {
   size(550, 550);
 }
 
-void draw(){
+void draw() {
   if (savePDF) beginRecord(PDF, timestamp()+".pdf");
-    strokeCap(SQUARE);
+  strokeCap(SQUARE);
   smooth();
   stroke (204, 150, 245);
   background(240);
-  translate(width/2,height/2);
- 
-  
-  int circleResolution = (int) map(mouseY, 0,height, 2,80);
-  float radius = mouseX-width/2 + 0.5;
-  float angle = PI/circleResolution;
+  translate(width/2, height/2);
+   
+    int circleResolution = (int) map(0, 0, height, 2, 100);
+    float radius = mouseX-width/2 + 0.5;
+    float angle = random (PI, 100);
+    strokeWeight(mouseY/20);
 
-  strokeWeight(mouseY/20);
-
-  beginShape();
-  for (int i=0; i<=circleResolution; i++){
-    if (mouseX > width/2) {
-      stroke (255);
-    } else {
-      stroke (204, 150, 245);
+    beginShape();
+    for (int i=0; i<=circleResolution; i++) {
+      if (mouseX > width/2) {
+        stroke (255);
+      } 
+      else {
+        stroke (204, 150, 245);
+      }
+      float x = cos(angle*i) * radius*2;
+      float y = sin(angle*i) * radius-2;
+      line(mouseX, mouseY, x, y);
+      // vertex(x, y);
     }
-    float x = cos(angle*i) * radius*2;
-    float y = sin(angle*i) * radius-2;
-    line(0, 0, x, y);
-    // vertex(x, y);
+    endShape();
+
+
+    if (savePDF) {
+      savePDF = false;
+      endRecord();
+    }
   }
-  endShape();
-  
- 
-  if (savePDF) {
-    savePDF = false;
-    endRecord();
+
+  void keyPressed() {
+    if (key=='s' || key=='S') saveFrame(timestamp()+"_##.png");
+    if (key=='p' || key=='P') savePDF = true;
   }
-}
 
-void keyPressed() {
-  if (key=='s' || key=='S') saveFrame(timestamp()+"_##.png");
-  if (key=='p' || key=='P') savePDF = true;
-}
-
-// timestamp
-String timestamp() {
-  Calendar now = Calendar.getInstance();
-  return String.format("%1$ty%1$tm%1$td_%1$tH%1$tM%1$tS", now);
-}
-
-
+  // timestamp
+  String timestamp() {
+    Calendar now = Calendar.getInstance();
+    return String.format("%1$ty%1$tm%1$td_%1$tH%1$tM%1$tS", now);
+  }
 
